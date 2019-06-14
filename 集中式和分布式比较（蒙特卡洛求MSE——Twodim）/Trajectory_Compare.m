@@ -25,41 +25,45 @@ x_fusion_MHE1=fusion_MHE(1,50:Len);
 x_fusion_MHE2=fusion_MHE(2,50:Len);
 
 figure(1)
-plot(50:Len,x_d1(50:Len),'k','LineWidth',2);
+plot(50:Len,x_d1(50:Len),'k-.','LineWidth',2);
 hold on
-plot(50:Len,x_fusion_c1,'r-.','LineWidth',2);
+plot(50:Len,x_fusion_c1,'r-','LineWidth',2);
 % plot(50:Len,x_fusion_MHE1,'g-.','LineWidth',2);
-legend({'x','x_{CFE}'},'FontSize',12)
+h1=legend({'x','x_{CFE}'},'FontSize',12);
+set(h1,'Orientation','horizon')
 xlabel('Time(t)','FontSize',12);
 ylabel('State 1','FontSize',12);
-set(gcf,'Pos',[300,100,800,250]);
+set(gcf,'Pos',[300,100,600,200]);
 
 figure(2)
-plot(50:Len,x_d2(50:Len),'k','LineWidth',2);
+plot(50:Len,x_d2(50:Len),'k-.','LineWidth',2);
 hold on
-plot(50:Len,x_fusion_c2,'r-.','LineWidth',2);
+plot(50:Len,x_fusion_c2,'r','LineWidth',2);
 % plot(50:Len,x_fusion_MHE2,'g-.','LineWidth',2);
-legend({'x','x_{CFE}'},'FontSize',12)
+h2=legend({'x','x_{CFE}'},'FontSize',12);
+set(h2,'Orientation','horizon')
 xlabel('Time(t)','FontSize',12);
 ylabel('State 2','FontSize',12);
-set(gcf,'Pos',[300,100,800,250]);
+set(gcf,'Pos',[300,100,600,200]);
 
 figure(3)
-plot(50:Len,x_d1(50:Len),'k','LineWidth',2);
+plot(50:Len,x_d1(50:Len),'k-.','LineWidth',2);
 hold on
-plot(50:Len,x_fusion_d1,'b-.','LineWidth',2);
+plot(50:Len,x_fusion_d1,'b','LineWidth',2);
 % plot(50:Len,x_fusion_MHE1,'g-.','LineWidth',2);
-legend({'x','x_{DFE}'},'FontSize',12)
+h3=legend({'x','x_{DFE}'},'FontSize',12);
+set(h3,'Orientation','horizon')
 xlabel('Time(t)','FontSize',12);
 ylabel('State 1','FontSize',12);
-set(gcf,'Pos',[300,100,800,250]);
+set(gcf,'Pos',[300,100,600,200]);
 
 figure(4)
-plot(50:Len,x_d2(50:Len),'k','LineWidth',2);
+plot(50:Len,x_d2(50:Len),'k-.','LineWidth',2);
 hold on
-plot(50:Len,x_fusion_d2,'b-.','LineWidth',2);
+plot(50:Len,x_fusion_d2,'b','LineWidth',2);
 % plot(50:Len,x_fusion_MHE2,'g-.','LineWidth',2);
-legend({'x','x_{DFE}'},'FontSize',12)
+h4=legend({'x','x_{DFE}'},'FontSize',12);
+set(h4,'Orientation','horizon')
 xlabel('Time(t)','FontSize',12);
 ylabel('State 2','FontSize',12);
-set(gcf,'Pos',[300,100,800,250]);
+set(gcf,'Pos',[300,100,600,200]);
