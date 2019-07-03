@@ -28,7 +28,7 @@ for i=2:1:Len
     for j=1:1:L
         C=Ci(1,(j-1)*n+1:j*n);
         D=Di(1,(j-1)*z1+1:j*z1);
-        z(i,j)=C*x((i-1)*n+1:i*n,1)+D*v(:,i);
+        z(i,j)=C*x((i-1)*n+1:i*n,1)+D*v(j,i);
         y(i,j)=sign(z(i,j)-to(j));
         if(y(i,j)*y(i-1,j)<0)
             index_switch(i,j)=1;

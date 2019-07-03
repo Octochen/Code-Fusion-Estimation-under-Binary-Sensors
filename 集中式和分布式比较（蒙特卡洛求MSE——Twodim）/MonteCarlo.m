@@ -4,16 +4,17 @@ clear all;
 Len=200;
 z0 = 2; % 噪声w的维数
 z1 = 1; % 噪声v的维数
+L=18;
 to=[-0.15 -0.12 -0.09 -0.05 0 0.05 0.09 0.12 0.15 -0.15 -0.12 -0.09 -0.05 0 0.05 0.09 0.12 0.15];
 
 err_c=zeros(1,Len);
 err_d=zeros(19,Len);
 err_MHE=zeros(1,Len);
-N_Monte=200;
+N_Monte=10;
 
 for t1=1:N_Monte
     w=(0.4*rand(z0,Len)-0.2);
-    v=(0.4*rand(z1,Len)-0.2);
+    v=(0.4*rand(z1*L,Len)-0.2);
     [err_1,~,~]=Error_Centralized(w,v,Len,to);
     [err_2,~,~]=Error_Distributed(w,v,Len,to);
     [err_3,~,~]=Error_MHE(w,v,Len,to);
